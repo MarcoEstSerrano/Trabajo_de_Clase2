@@ -88,7 +88,7 @@ public class databaseHelper {
     public ResultSet getFuelType() throws SQLException {
         try {
             Statement statement = conn.createStatement();
-            String sql = "SELECT * FROM FuelType ;";
+            String sql = "SELECT * FROM FuelType;";
             ResultSet resultset3 = statement.executeQuery(sql);
             return resultset3;
         } catch (SQLException ex) {
@@ -104,7 +104,7 @@ public class databaseHelper {
         try {
             //otra forma
             PreparedStatement predStatement = 
-            conn.prepareStatement("INSERT INTO cars (brand, models, man_year, color, cc_engine, fuelType, mileage, photo) VALUES (?, ?, ?, ?, ?, ?, ?, ?);");
+            conn.prepareStatement("INSERT INTO cars (brand, model, man_year, color, cc_engine, fuelType, mileage, photo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
             
             predStatement.setString(1, car.Brand);
             predStatement.setString(2, car.Model);
@@ -113,7 +113,7 @@ public class databaseHelper {
             predStatement.setString(5, car.Engine);
             predStatement.setString(6, car.FuelType);
             predStatement.setInt(7, car.Mileage);
-            predStatement.setString(8, "");
+            predStatement.setString(8, " ");
             
             predStatement.executeUpdate();    
             

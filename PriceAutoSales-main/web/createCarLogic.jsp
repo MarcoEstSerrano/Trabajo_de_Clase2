@@ -16,6 +16,8 @@
     String txtEngine = request.getParameter("txtEngine");
     String selFuelType = request.getParameter("selFuelType");
     int txtMileage = Integer.parseInt(request.getParameter("txtMileage"));
+    
+    String photo = " ";
 
     databaseHelper database = new databaseHelper();
 
@@ -26,7 +28,7 @@
             txtEngine,
             selFuelType,
             txtMileage,
-            ""))) 
+            photo))) 
     {
             RequestDispatcher rd = request.getRequestDispatcher("carsServlet");
             rd.forward(request, response);
